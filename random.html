@@ -22,3 +22,47 @@
 <script src="random.js"></script>
 </body>
 </html>
+
+//////////////////////
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Brightness Animation</title>
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+        }
+
+        img {
+            transition: filter 0.1s;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="image-container">
+    <img class="image" src="Image/4.jpg" alt="Image 1">
+    <img class="image" src="Image/4.jpg" alt="Image 2">
+    <img class="image" src="Image/4.jpg" alt="Image 3">
+    <img class="image" src="Image/4.jpg" alt="Image 4">
+    <img class="image" src="Image/4.jpg" alt="Image 5">
+    <img class="image" src="Image/4.jpg" alt="Image 6">
+    <img class="image" src="Image/4.jpg" alt="Image 7">
+    <img class="image" src="Image/4.jpg" alt="Image 8">
+</div>
+<button onclick="randomBrightnessLoop()">Random</button>
+
+<script src = "teset.js"></script>
+</body>
+</html>
