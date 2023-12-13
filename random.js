@@ -46,3 +46,41 @@ function randomNumber(){
 function showPic(){
     document.getElementById();
 }
+const images = document.querySelectorAll('.image');
+let currentIteration = 0;
+let jackpot = '';
+
+function resetImages() {
+    images.forEach((image) => {
+        image.style.filter = 'brightness(30%)';
+    });
+}
+function resetIteration() {
+  currentIteration = 0;
+}
+
+function randomBrightnessLoop() {
+    resetImages(); // Reset images to default brightness before starting a new loop
+
+    const randomIndex = Math.floor(Math.random() * images.length);
+
+    images.forEach((image, index) => {
+        const brightnessValue = index === randomIndex ? 'brightness(100%)' : 'brightness(30%)';
+        image.style.filter = brightnessValue;
+    });
+
+    // Set a timeout to revert brightness after 3 seconds
+    setTimeout(() => {
+        resetImages(); // Reset images to default brightness
+        // Continue the loop if not reached the desired number of iterations
+        currentIteration++;
+        if (currentIteration < 5) {
+            randomBrightnessLoop();
+        } else {
+            // Keep the last image bright after the loop completes
+            images[randomIndex].style.filter = 'brightness(100%)';
+        }
+    }, 200); // Adjust the delay (200 milliseconds for this example)
+}
+resetIteration();
+console.log(currentIteration);
