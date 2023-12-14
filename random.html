@@ -1,68 +1,33 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Program</title>
-    <link rel="stylesheet" href="random.css">
-</head>
-<body>
-    <div class = 'container1'>
-        <img src = "https://hips.hearstapps.com/hmg-prod/images/large-cat-breed-1553197454.jpg?crop=1.00xw:0.505xh;0,0.0817xh&resize=640:*">
-        <img src = "https://hips.hearstapps.com/hmg-prod/images/large-cat-breed-1553197454.jpg?crop=1.00xw:0.505xh;0,0.0817xh&resize=640:*">
-        <img src = "https://hips.hearstapps.com/hmg-prod/images/large-cat-breed-1553197454.jpg?crop=1.00xw:0.505xh;0,0.0817xh&resize=640:*">
-        <img src = "https://hips.hearstapps.com/hmg-prod/images/large-cat-breed-1553197454.jpg?crop=1.00xw:0.505xh;0,0.0817xh&resize=640:*">
-    </div>
-    <div class = 'container2'></div>
-        <img src = "https://hips.hearstapps.com/hmg-prod/images/large-cat-breed-1553197454.jpg?crop=1.00xw:0.505xh;0,0.0817xh&resize=640:*">
-        <img src = "https://hips.hearstapps.com/hmg-prod/images/large-cat-breed-1553197454.jpg?crop=1.00xw:0.505xh;0,0.0817xh&resize=640:*">
-        <img src = "https://hips.hearstapps.com/hmg-prod/images/large-cat-breed-1553197454.jpg?crop=1.00xw:0.505xh;0,0.0817xh&resize=640:*">
-        <img src = "https://hips.hearstapps.com/hmg-prod/images/large-cat-breed-1553197454.jpg?crop=1.00xw:0.505xh;0,0.0817xh&resize=640:*">
-    </div>
-    <button onclick="randomNumber()">Random</button>
-<script src="random.js"></script>
-</body>
-</html>
-
-//////////////////////
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Brightness Animation</title>
-    <style>
-        .image-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 100vh;
-        }
+<html>
 
-        img {
-            transition: filter 0.1s;
-        }
-
-        button {
-            margin-top: 20px;
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-<div class="image-container">
-    <img class="image" src="Image/4.jpg" alt="Image 1">
-    <img class="image" src="Image/4.jpg" alt="Image 2">
-    <img class="image" src="Image/4.jpg" alt="Image 3">
-    <img class="image" src="Image/4.jpg" alt="Image 4">
-    <img class="image" src="Image/4.jpg" alt="Image 5">
-    <img class="image" src="Image/4.jpg" alt="Image 6">
-    <img class="image" src="Image/4.jpg" alt="Image 7">
-    <img class="image" src="Image/4.jpg" alt="Image 8">
-</div>
-<button onclick="randomBrightnessLoop()">Random</button>
-
-<script src = "teset.js"></script>
-</body>
+    <head>
+        <title>Random Website</title>
+        <link rel="stylesheet" href="index.css">        
+    </head>
+    <body>
+        <div id="container1">
+                <img class="number-picture" src="Image/1.jpg" alt="Pnut">
+                <img class="number-picture" src="Image/2.jpg" alt="Poy">
+                <img class="number-picture" src="Image/3.jpg" alt="Time">
+                <img class="number-picture" src="Image/4.jpg" alt="Sun">
+            
+        </div>
+        <button id= "myButton" onclick="randomBrightnessLoop()">
+        <img src="https://static-00.iconduck.com/assets.00/perspective-dice-six-faces-random-icon-2048x2048-9uct7e7b.png">
+        </button>
+        <div id="container2">
+                <img class="number-picture" src="Image/4.jpg" alt="Nine">
+                <img class="number-picture" src="Image/3.jpg" alt="Pluem">
+                <img class="number-picture" src="Image/2.jpg" alt="Moning">
+                <img class="number-picture" src="Image/1.jpg" alt="May">
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <p id="modalContent"></p>
+            </div>
+          </div>
+    <script src="index.js"></script>
+    </body>
 </html>
