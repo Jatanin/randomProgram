@@ -26,7 +26,8 @@ function openModal() {
   const modal = $('#myModal');
   const modalContent = modal.find('.modal-content');
 
-  modalContent.append(lastImageName);
+  const contentToShow = `Congrats! ${lastImageName} `;
+  modalContent.html(contentToShow);
 
   modal.css({
     'display': 'block',
@@ -45,7 +46,7 @@ function openModal() {
 function resetModalContent() {
     const modal = $('#myModal');
     const modalContent = modal.find('.modal-content');
-
+    
     // Clear the content
     modalContent.empty();
 
@@ -102,6 +103,7 @@ $(document).on('click', '.overlay', function () {
 });
 
 function resetImagesBright() {
+
   images.forEach((image) => {
     image.style.filter = 'brightness(100%)';
   });
@@ -116,6 +118,7 @@ function resetImagesBright() {
   modalContent.css({
     left: '0%'
   });
+
 }
 
 function resetImages() {
@@ -126,42 +129,51 @@ function resetImages() {
 
 function randomBrightnessLoop() {
     resetImages();
-    const randomIndex = Math.floor(Math.random() * images.length);
-    images[randomIndex].style.filter = 'brightness(100%)';
-    lastImageName = images[randomIndex].getAttribute('alt');
+
+    // Filter out the 'poy' image from eligible images
+    const eligibleImages = Array.from(images).filter(image => image.getAttribute('alt') !== 'poy');
+
+    if (eligibleImages.length === 0) {
+        console.error("No eligible images found excluding 'poy'.");
+        return; // Exit the function if there are no eligible images
+    }
+
+    const randomIndex = Math.floor(Math.random() * eligibleImages.length);
+    const currentImage = eligibleImages[randomIndex];
+    const currentAlt = currentImage.getAttribute('alt');
+
+    currentImage.style.filter = 'brightness(100%)';
+    lastImageName = currentAlt;
 
     // Calculate the timeout delay based on the current iteration
     const maxIterations = askNumber;
     const initialDelay = 200;
-    const maxDelay = 1000;
+    const maxDelay = 1500;
 
-    const easingFunction = (t) => 1 - Math.pow(1 - t, 2); // Ease-out function
+    const slowdownStartPercentage = 0.85; // Start slowing down after 85% of the iterations
 
     // Apply a custom easing to slow down towards the end
-    const customEasing = (currentIteration, maxIterations) => {
-        const normalizedIteration = currentIteration / maxIterations;
+    const customEasing = (t) => 1 - Math.pow(1 - t, 2); // Ease-out function
 
-        // Delay the start of the slowdown
-        const normalizedWithDelay = normalizedIteration >= 0.5
-            ? (normalizedIteration - 0.5) / 0.5
-            : 0;
+    const delay = initialDelay + customEasing(currentIteration / maxIterations) * (maxDelay - initialDelay);
 
-        return easingFunction(Math.sqrt(normalizedWithDelay));
-    };
-
-    const delay = initialDelay + customEasing(currentIteration, maxIterations) * (maxDelay - initialDelay);
     setTimeout(() => {
         resetImagesBright();
         currentIteration++;
 
-        if (currentIteration < askNumber) {
+        if (currentIteration < maxIterations) {
             randomBrightnessLoop();
         } else {
             currentIteration = 0;
-            setTimeout(() => {
-                openModal();
-            }, 700);
+            // Check if the last image is 'poy' and skip it
+            if (lastImageName !== 'Poy') {
+                setTimeout(() => {
+                    openModal();
+                }, 500);
+            } else {
+                // If 'poy', call the function again
+                randomBrightnessLoop();
+            }
         }
-    }, delay);
+    }, currentIteration === maxIterations - 1 ? delay * 1.8 : delay);
 }
-  
