@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Random Website</title>
-        <link rel="stylesheet" href="index.css">        
-    </head>
-    <body>
-        <div id="container1">
-                <img class="number-picture" src="Image/1.jpg" alt="Pnut">
-                <img class="number-picture" src="Image/2.jpg" alt="Poy">
-                <img class="number-picture" src="Image/3.jpg" alt="Time">
-                <img class="number-picture" src="Image/4.jpg" alt="Sun">
-            
-        </div>
-        <button id= "myButton" onclick="randomBrightnessLoop()">
-        <img src="https://static-00.iconduck.com/assets.00/perspective-dice-six-faces-random-icon-2048x2048-9uct7e7b.png">
-        </button>
-        <div id="container2">
-                <img class="number-picture" src="Image/4.jpg" alt="Nine">
-                <img class="number-picture" src="Image/3.jpg" alt="Pluem">
-                <img class="number-picture" src="Image/2.jpg" alt="Moning">
-                <img class="number-picture" src="Image/1.jpg" alt="May">
-        </div>
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-              <span class="close" onclick="closeModal()">&times;</span>
-              <p id="modalContent"></p>
-            </div>
-          </div>
-    <script src="index.js"></script>
-    </body>
+<head>
+  <title>Random Website</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+  </div>
+  <div id="container1">
+    <img class="number-picture" src="https://t4.ftcdn.net/jpg/00/97/58/97/360_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg" alt="Pnut">
+    <img class="number-picture" src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg" alt="Poy">
+    <img class="number-picture" src="https://img.freepik.com/free-photo/red-white-cat-i-white-studio_155003-13189.jpg" alt="Time">
+    <img class="number-picture" src="https://th-thumbnailer.cdn-si-edu.com/ii_ZQzqzZgBKT6z9DVNhfPhZe5g=/fit-in/1600x0/filters:focal(1061x707:1062x708)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/55/95/55958815-3a8a-4032-ac7a-ff8c8ec8898a/gettyimages-1067956982.jpg" alt="Sun">
+  </div>
+  <button id="myButton" onclick="randomBrightnessLoop()">
+    <img src="https://www.elwano.de/media/image/0c/dd/3f/kisspng-paper-box-computer-icons-symbol-random-icons-5ac09a22ee5b66-3325679315225718109763.png">
+  </button>
+  <div id="container2">
+    <img class="number-picture" src="https://i.natgeofe.com/n/4cebbf38-5df4-4ed0-864a-4ebeb64d33a4/NationalGeographic_1468962_4x3.jpg" alt="Nine">
+    <img class="number-picture" src="https://www.breatheazy.co.uk/wp-content/uploads/2023/09/Untitled-design-35-1080x675.png" alt="Pluem">
+    <img class="number-picture" src="https://www.daysoftheyear.com/cdn-cgi/image/dpr=1%2Cf=auto%2Cfit=cover%2Cheight=650%2Cq=40%2Csharpen=1%2Cwidth=956/wp-content/uploads/happy-cat-month-1.jpg" alt="Moning">
+    <img class="number-picture" src="https://t4.ftcdn.net/jpg/03/03/62/45/360_F_303624505_u0bFT1Rnoj8CMUSs8wMCwoKlnWlh5Jiq.jpg" alt="May">
+  </div>
+
+  <div class="modal" id="myModal">
+    <div class="modal-content">
+      <span class="close">
+        <i class="fa fa-times"></i>
+      </span>
+    </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src="index.js"></script>
+</body>
+
 </html>
